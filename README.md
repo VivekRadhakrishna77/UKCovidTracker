@@ -12,4 +12,4 @@ This project uses retrofit, gson, and RobinHood's spark to retrieve JSON data fr
 
 # Demonstration
 
-<img src="https://github.com/VivekRadhakrishna77/UKCovidTracker/blob/master/Covid%20Tracker%20Demonstration.gif?raw=true"  width="250" height="250"/>
+<img src="https://github.com/VivekRadhakrishna77/UKCovidTracker/blob/master/Covid%20Tracker%20Demonstration.gif?raw=true"  width="300" height="500"/>
