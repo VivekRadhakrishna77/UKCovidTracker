@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <RadioGroup
+        android:id="@+id/RadioGroupMetric"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center|fill_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRegion">
+
+        <RadioButton
+            android:id="@+id/radioButtonDailyCases"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:gravity="fill_vertical"
+            android:text="Daily Cases" />
+
+        <RadioButton
+            android:id="@+id/radioButtonCumulativeCases"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:gravity="fill_vertical"
+            android:text="Cumulative Cases" />
+
+        <RadioButton
+            android:id="@+id/radioButtonDailyDeaths"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:gravity="fill_vertical"
+            android:text="Daily Deaths" />
+
+        <RadioButton
+            android:id="@+id/radioButtonCumulativeDeaths"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:gravity="fill_vertical"
+            android:text="Cumulative Deaths" />
+
+
+    </RadioGroup>
+
+    <com.robinhood.spark.SparkView
+        android:id="@+id/sparkView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/RadioGroupTimescale"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/RadioGroupMetric"></com.robinhood.spark.SparkView>
+
+    <RadioGroup
+        android:id="@+id/RadioGroupTimescale"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/tvMetricLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioButtonWeek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Week" />
+
+        <RadioButton
+            android:id="@+id/radioButtonMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Month" />
+
+        <RadioButton
+            android:id="@+id/radioButtonMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Max" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvDateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="$Date"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RadioGroupTimescale"
+        tools:text="March 21 2021" />
+
+    <TextView
+        android:id="@+id/tvMetricLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="Metric"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvDateLabel"
+        tools:text="1,023" />
+
+    <TextView
+        android:id="@+id/tvRegion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="UK Covid Tracker"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintBottom_toTopOf="@+id/RadioGroupMetric"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
